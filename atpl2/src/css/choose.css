@@ -1,0 +1,14 @@
+.demo
+{
+    z-index: 500;
+    color: black;
+    display: flex;
+    position: absolute;
+    top: 0;
+    background: red;
+    height: 100vh;
+    width: 100%;
+}
+.demo h1{
+    z-index: 1000;
+}

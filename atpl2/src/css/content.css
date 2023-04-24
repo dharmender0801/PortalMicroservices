@@ -1,0 +1,140 @@
+.back-cont {
+
+    /* height: 100vh; */
+    background-image: radial-gradient(#2756d6 25%, #06102c 60%);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    /* padding: 50px; */
+   
+}
+
+
+
+/* .hexagon-gallery {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 5em;
+    height: 100%;
+    padding-bottom: 20%;
+
+} */
+
+.hex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2em;
+    margin-top: -3em;
+    display: flex;
+    position: relative;
+    width: 250px;
+    height: 262px;
+    background-color: grey;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+
+.hex:hover {
+    transition: .5s;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+    background-color: #ffffff;
+    width: 260px;
+    height: 272px;
+
+
+}
+
+/* .con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+
+
+@media only screen and (max-width: 780px) {
+    .hex4 {
+        margin-top: 0;
+    }
+
+    .hexagon-gallery {
+        align-items: center;
+    }
+
+    .hex {
+        margin-right: 0;
+    }
+
+    .hexagon-gallery {
+        height: 230%;
+    }
+
+}
+
+/* .lines {
+    position: relative;
+    right: 40%;
+    top: 10%;
+} */
+.hex  span{
+    font-weight: 800;
+    font-size: 22px;
+    color: #01154a;
+}
+
+
+
+.main {
+    padding: 4em 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; 
+    /* flex-direction: row; */
+    padding-left: 2em;
+    width: 80vw;
+    --s: 50px;   
+    --m: 4px;    
+    --f: calc(1.732  var(--s) + 4  var(--m)  - 1px);
+  }
+  
+  .container {
+    font-size: 0; /*disable white space between inline block element */
+  }
+  
+  /* .container div {
+    width: var(--s);
+    margin: var(--m);
+    height: calc(var(--s)*1.1547); 
+    display: inline-block;
+    font-size:initial;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    background: rgb(70, 69, 69);
+    margin-bottom: calc(var(--m) - var(--s)*0.2885); 
+  }
+  .container div:nth-child(odd) {
+    background:green;
+  }
+  .container::before {
+    content: "";
+    width: calc(var(--s)/2 + var(--m));
+    float: left;
+    height: 220%;
+    shape-outside: repeating-linear-gradient(     
+                     #0000 0 calc(var(--f) - 3px),      
+                     #000  0 var(--f));
+  }
+  .container div:hover{
+    background-color: #0d6efd;
+    transition: all .3s ease-out;
+  }
+   */

@@ -1,0 +1,237 @@
+.page_1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.page_1 table {
+    font-weight: 600;
+    /* color: #0d6efd; */
+    /* background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25)); */
+
+}
+
+
+thead tr {
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background-color: #2756d6 !important;
+    text-align: center !important;
+    padding: .50em !important;
+
+
+}
+
+thead tr th {
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background-color: #2756d6 !important;
+    text-align: center !important;
+    padding: .4em !important;
+
+
+}
+
+thead {
+    width: 100% !important;
+    position: sticky;
+    top: 0;
+    background-attachment: fixed !important;
+}
+
+
+
+.datepick {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5em 1.5em;
+    width: 100%;
+    font-weight: 600;
+}
+
+
+.page-btn span button {
+    border-radius: .5em;
+    color: #fff;
+    background: transparent;
+    border: none;
+    background-color: #2756d6;
+    padding: .1em 1em;
+}
+.btn-2{
+background: none !important;
+color: green !important;
+margin-left: 50px;
+}
+.page-btn{
+    padding-left: 1.3em;
+    padding-bottom: 1em;
+    position: relative;
+    top: 0;
+}
+
+.page-btn span button.hover {
+    background-color: #0074d9;
+}
+
+.datepick span:nth-child(3) {
+    padding-top: 1.5em;
+    padding-right: 3.2em;
+}
+
+.datepick span:nth-child(4) {
+    padding-top: 1.5em;
+}
+
+.datepick span:nth-child(4) button {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    background-color: transparent;
+    color: black;
+}
+
+.custom-input {
+    border: 1px black solid;
+    padding: 1em .5em;
+    border-radius: 5px !important;
+    height: 1.5em;
+    color: aliceblue;
+    font-weight: 400;
+    color: black;
+
+    /* background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25)); */
+    /* box-shadow: 0 0 2px #0074d9; */
+}
+
+.custom-input:focus {
+    /* background-color: rgb(226, 238, 229); */
+    outline: none;
+    color: #030303;
+    border: 1px solid #0c8af8;
+    box-shadow: 0 0 10px 2px #0074d9;
+}
+
+.table {
+    padding: 0 1.5em;
+    max-height: 29vw !important;
+    overflow-y: scroll;
+
+}
+
+/* .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    background-color: rgb(11, 10, 10);
+  } */
+
+.loading {
+    z-index: 100;
+    position: absolute;
+    top: 48%;
+    left: 55%;
+    margin: auto;
+    border: 10px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 10px solid #2756d6;
+    width: 100px;
+    height: 100px;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+tbody tr {
+
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center !important;
+    border: none !important;
+    height: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loader-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #2756d6;
+    animation: blink 1s ease-in-out infinite;
+    margin: 0 10px;
+}
+
+.loader-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.Loadermain {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6b6b6b19;
+    z-index: 20;
+    height: 100vh;
+}
+
+@keyframes blink {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+select {
+    padding: 6px 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.datepick .FilterCont div  {
+    font-weight: 700;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+.FilterCont{
+    padding-top: 0 !important;
+}
+
+

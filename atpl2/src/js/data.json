@@ -1,0 +1,235 @@
+{
+    "columns": [
+        {
+            "id": 1,
+            "service": "voicechat",
+            "columnName": "Date"
+        },
+        {
+            "id": 2,
+            "service": "voicechat",
+            "columnName": "Active Base"
+        },
+        {
+            "id": 3,
+            "service": "voicechat",
+            "columnName": "Calls (Nos.)"
+        },
+        {
+            "id": 4,
+            "service": "voicechat",
+            "columnName": "Duration (In Seconds)"
+        },
+        {
+            "id": 5,
+            "service": "voicechat",
+            "columnName": "Pulses"
+        },
+        {
+            "id": 6,
+            "service": "voicechat",
+            "columnName": "Total Mou's"
+        },
+        {
+            "id": 7,
+            "service": "voicechat",
+            "columnName": "Unique User (Nos.)"
+        },
+        {
+            "id": 8,
+            "service": "voicechat",
+            "columnName": "New Subscriptions"
+        },
+        {
+            "id": 9,
+            "service": "voicechat",
+            "columnName": "Renwals"
+        },
+        {
+            "id": 10,
+            "service": "voicechat",
+            "columnName": "New Sub Revnue"
+        },
+        {
+            "id": 11,
+            "service": "voicechat",
+            "columnName": "Renwal Revenue"
+        },
+        {
+            "id": 12,
+            "service": "voicechat",
+            "columnName": "Total Sub Revenue"
+        },
+        {
+            "id": 13,
+            "service": "voicechat",
+            "columnName": "Browse Revenue (L.C)"
+        },
+        {
+            "id": 14,
+            "service": "voicechat",
+            "columnName": "Total Revenue (L.C)"
+        },
+        {
+            "id": 15,
+            "service": "voicechat",
+            "columnName": "Total Revenue (USD)"
+        },
+        {
+            "id": 16,
+            "service": "voicechat",
+            "columnName": " Revenue ( $ USD )"
+        },
+        {
+            "id": 17,
+            "service": "voicechat",
+            "columnName": " Total Unsub "
+        }
+    ],
+    "datas": [
+        {
+            "values": [
+                {
+                    "name": "Date",
+                    "count": "2023-03-01"
+                },
+                {
+                    "name": "Active Base",
+                    "count": "60108"
+                },
+                {
+                    "name": "Calls (Nos.)",
+                    "count": "193"
+                },
+                {
+                    "name": "Duration (In Seconds)",
+                    "count": "4793"
+                },
+                {
+                    "name": "Pulses",
+                    "count": "245"
+                },
+                {
+                    "name": "Total Mou's",
+                    "count": "79"
+                },
+                {
+                    "name": "Unique User (Nos.)",
+                    "count": "193"
+                },
+                {
+                    "name": "New Subscriptions",
+                    "count": "1003"
+                },
+                {
+                    "name": "Renwals",
+                    "count": "10224"
+                },
+                {
+                    "name": "New Sub Revnue",
+                    "count": "31710"
+                },
+                {
+                    "name": "Renwal Revenue",
+                    "count": "319920"
+                },
+                {
+                    "name": "Total Sub Revenue",
+                    "count": "351630"
+                },
+                {
+                    "name": "Browse Revenue (L.C)",
+                    "count": "6125"
+                },
+                {
+                    "name": "Total Revenue (L.C)",
+                    "count": "357755"
+                },
+                {
+                    "name": "Total Revenue (USD)",
+                    "count": "568"
+                },
+                {
+                    "name": " Revenue ( $ USD )",
+                    "count": "577"
+                },
+                {
+                    "name": " Total Unsub ",
+                    "count": "5"
+                }
+            ]
+        },
+        {
+            "values": [
+                {
+                    "name": "Date",
+                    "count": "2023-03-02"
+                },
+                {
+                    "name": "Active Base",
+                    "count": "60108"
+                },
+                {
+                    "name": "Calls (Nos.)",
+                    "count": "208"
+                },
+                {
+                    "name": "Duration (In Seconds)",
+                    "count": "6285"
+                },
+                {
+                    "name": "Pulses",
+                    "count": "278"
+                },
+                {
+                    "name": "Total Mou's",
+                    "count": "104"
+                },
+                {
+                    "name": "Unique User (Nos.)",
+                    "count": "208"
+                },
+                {
+                    "name": "New Subscriptions",
+                    "count": "928"
+                },
+                {
+                    "name": "Renwals",
+                    "count": "10368"
+                },
+                {
+                    "name": "New Sub Revnue",
+                    "count": "30700"
+                },
+                {
+                    "name": "Renwal Revenue",
+                    "count": "324370"
+                },
+                {
+                    "name": "Total Sub Revenue",
+                    "count": "355070"
+                },
+                {
+                    "name": "Browse Revenue (L.C)",
+                    "count": "6950"
+                },
+                {
+                    "name": "Total Revenue (L.C)",
+                    "count": "362020"
+                },
+                {
+                    "name": "Total Revenue (USD)",
+                    "count": "573"
+                },
+                {
+                    "name": " Revenue ( $ USD )",
+                    "count": "584"
+                },
+                {
+                    "name": " Total Unsub ",
+                    "count": "7"
+                }
+            ]
+        }
+    ]
+}

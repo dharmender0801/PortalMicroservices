@@ -1,0 +1,38 @@
+h1{
+    font-weight: 800;
+}
+.side-nav{
+    width: 20em;
+    height: 100vh;
+    background-color: #01154a;
+    display: flex;
+    flex-direction: column;
+    /* padding: 3%; */
+    padding-top: 2%;
+    /* overflow: scroll; */
+}
+.side-nav .dropdown-container {
+    display: none;
+    text-align: center;
+    margin-left: 30%;
+    background-color: red;
+    font-weight: 800;
+  }
+  .dropdown-container li{
+    display:flex;
+    /* flex-direction: column; */
+    color: white;
+    column-gap: 20px;
+    font-weight: 800;
+    margin-top: 10px;
+
+  }
+  .btn-down{
+    background: transparent;
+    color: white;
+    border: 0;
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+ 
