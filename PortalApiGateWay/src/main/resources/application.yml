@@ -1,0 +1,45 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+         
+     
+      routes:
+      - id: All-Services  
+        uri: lb://All-Services
+        predicates:
+        - Path=/service/**
+        
+      - id: Country-Wise-Service 
+        uri: lb://Country-Wise-Service
+        predicates:
+        - Path=/country/**
+        
+      - id: Portal-Mis
+        uri: lb://Portal-Mis
+        predicates:
+        - Path=/Airtel-CongoB/**
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true  
+    service-url:
+      defaultZone: http://192.168.167.73:8082/eureka
+    
+
+      
+    
+    
