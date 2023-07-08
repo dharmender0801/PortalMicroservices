@@ -7,10 +7,10 @@ import com.portalmis.request.Requests;
 
 public interface mis_service {
 
-	
-
 	void GetConsolidate(List<Requests> reqBody);
 
 	MisResponse getData(List<Requests> reqBody);
+
+	MisResponse Mis(List<Requests> requests);
 
 }

@@ -9,8 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.countrywise.Model.VendorModel;
 import com.countrywise.response.AllResponse;
 import com.countrywise.service.CountryService;
 
@@ -33,4 +35,13 @@ public class CountryController {
 		
 		return new ResponseEntity<List<AllResponse>>(response, HttpStatus.OK);
 	}
+	
+	
+	@GetMapping("/get/vendor")
+	public ResponseEntity<List<VendorModel>> getVendorData(@RequestParam("country") String country)
+	{
+		return new ResponseEntity<List<VendorModel>>(Conservice.getVendor(country), HttpStatus.OK);
+	}
+	
+	
 }

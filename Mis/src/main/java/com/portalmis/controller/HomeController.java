@@ -36,7 +36,7 @@ public class HomeController {
 
 	}
 
-	@RequestMapping(method = {RequestMethod.POST},path = "/voicechat")
+	@RequestMapping(method = { RequestMethod.POST }, path = "/voicechat/live")
 	public ResponseEntity<MisResponse> GetData(@RequestBody List<Requests> reqBody) {
 
 		MisResponse misResponse = new MisResponse();
@@ -44,7 +44,14 @@ public class HomeController {
 
 		return new ResponseEntity<MisResponse>(misResponse, HttpStatus.OK);
 	}
-	
+
+	@PostMapping("/voicechat/mis")
+	public ResponseEntity<MisResponse> getMis(@RequestBody List<Requests> requests) {
+		
+		
+		return new ResponseEntity<MisResponse>(misservice.Mis(requests), HttpStatus.OK);
+	}
+
 	@PostMapping("/consolidate")
 	public ResponseEntity ConsoldateData(@RequestBody List<Requests> reqBody) {
 		misservice.GetConsolidate(reqBody);

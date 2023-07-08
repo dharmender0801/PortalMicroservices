@@ -225,4 +225,32 @@ public class mis_serviceImpl implements mis_service {
 
 	}
 
+	@Override
+	public MisResponse Mis(List<Requests> requests) {
+		// TODO Auto-generated method stub
+
+		MisResponse misResponse = new MisResponse();
+
+		@SuppressWarnings("unchecked")
+		List<Columns> arrayList = restTemplate.getForObject("http://all-services/service/get/column?service=voicechat",
+				List.class);
+		String response = restTemplate.getForObject("http://all-services/service/get/column?service=voicechat",
+				String.class);
+		String startDate = null;
+		String endDate = null;
+		for (Requests req : requests) {
+			if (req.getName().equalsIgnoreCase("startdate")) {
+				startDate = req.getValue();
+
+			}
+			if (req.getName().equalsIgnoreCase("enddate")) {
+				endDate = req.getValue();
+
+			}
+
+		}
+		misResponse.setColumns(arrayList);
+		return null;
+	}
+
 }
