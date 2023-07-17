@@ -19,6 +19,7 @@ import com.countrywise.Repos.OperatorRepository;
 import com.countrywise.Repos.VendorRepos;
 import com.countrywise.response.AllResponse;
 import com.countrywise.response.OperatorResponse;
+import com.countrywise.response.vendorResponse;
 import com.countrywise.service.CountryService;
 import com.netflix.discovery.converters.Auto;
 
@@ -59,7 +60,6 @@ public class CountryServiceImpl implements CountryService {
 					opresponseModel.setOperatordata(DataModel);
 					opresponseModel.setName(op.getOperator());
 					operatorResponse.add(opresponseModel);
-
 				}
 
 				AllresponseModel.setOperator(operatorResponse);
@@ -73,16 +73,15 @@ public class CountryServiceImpl implements CountryService {
 	}
 
 	@Override
-	public List<VendorModel> getVendor(String country) {
+	public List<vendorResponse> getVendor(String country) {
 		// TODO Auto-generated method stub
 		System.out.println(country);
 		String query = "SELECT * FROM vendor_menu  WHERE " + country + " = '1'";
-		List<VendorModel> list = jdbcTemplate.query(query, (rs, rowNum) -> {
-			VendorModel vendorModel = new VendorModel();
+		List<vendorResponse> list = jdbcTemplate.query(query, (rs, rowNum) -> {
+			vendorResponse vendorModel = new vendorResponse();
 			vendorModel.setId(rs.getLong("id"));
-			vendorModel.setMenuName(rs.getString("menu_name"));
-			vendorModel.setAirtelCongoB(rs.getString("airtel_congob"));
-//			vendorModel.setSafaricomKenya(rs.getString("safaricom_kenya"));
+			vendorModel.setMenu(rs.getString("menu_name"));
+			vendorModel.setCountry(country);
 			return vendorModel;
 		});
 

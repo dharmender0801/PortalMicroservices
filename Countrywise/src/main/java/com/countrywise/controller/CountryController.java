@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.countrywise.Model.VendorModel;
 import com.countrywise.response.AllResponse;
+import com.countrywise.response.vendorResponse;
 import com.countrywise.service.CountryService;
 
 @RestController
@@ -37,10 +38,10 @@ public class CountryController {
 	}
 	
 	
-	@GetMapping("/get/vendor")
-	public ResponseEntity<List<VendorModel>> getVendorData(@RequestParam("country") String country)
+	@GetMapping("/get/vendor-menu")
+	public ResponseEntity<List<vendorResponse>> getVendorData(@RequestParam("country") String country)
 	{
-		return new ResponseEntity<List<VendorModel>>(Conservice.getVendor(country), HttpStatus.OK);
+		return new ResponseEntity<List<vendorResponse>>(Conservice.getVendor(country), HttpStatus.OK);
 	}
 	
 	

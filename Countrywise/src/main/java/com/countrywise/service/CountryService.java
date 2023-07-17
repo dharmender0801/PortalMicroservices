@@ -4,11 +4,12 @@ import java.util.List;
 
 import com.countrywise.Model.VendorModel;
 import com.countrywise.response.AllResponse;
+import com.countrywise.response.vendorResponse;
 
 public interface CountryService {
 
 	List<AllResponse> getAll();
 
-	List<VendorModel> getVendor(String country);
+	List<vendorResponse> getVendor(String country);
 
 }
