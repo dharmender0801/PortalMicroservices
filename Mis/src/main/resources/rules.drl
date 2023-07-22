@@ -1,0 +1,18 @@
+import com.example.demo.Data
+
+global java.util.List result;
+
+rule "Select data with same date"
+when
+    $d1: Data($date: date)
+    $d2: Data(date == $date)
+    $d3: Data(date == $date)
+    $d4: Data(date == $date)
+then
+    List<Data> dataList = new ArrayList<>();
+    dataList.add($d1);
+    dataList.add($d2);
+    dataList.add($d3);
+    dataList.add($d4);
+    result.addAll(dataList);
+end
