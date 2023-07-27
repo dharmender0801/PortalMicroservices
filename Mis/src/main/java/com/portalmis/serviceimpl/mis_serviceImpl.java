@@ -499,9 +499,9 @@ public class mis_serviceImpl implements mis_service {
 		// TODO Auto-generated method stub
 		MisResponse misResponse = new MisResponse();
 		@SuppressWarnings("unchecked")
-		List<Columns> arrayList = restTemplate
-				.getForObject("http://all-services/service/get/column?service=updatevendor", List.class);
-		String response = restTemplate.getForObject("http://all-services/service/get/column?service=updatevendor",
+		List<Columns> arrayList = restTemplate.getForObject("http://all-services/service/get/column?service=vendor",
+				List.class);
+		String response = restTemplate.getForObject("http://all-services/service/get/column?service=vendor",
 				String.class);
 		VendorModel vendor = vendorepos.findByCpId(cpid);
 		List<Datas> data = findByCpid(response, vendor);
@@ -517,7 +517,7 @@ public class mis_serviceImpl implements mis_service {
 		ObjectMapper mapper = new ObjectMapper();
 		List<Datas> datas = new ArrayList<>();
 		JsonNode reqNode;
-		
+
 		try {
 			reqNode = mapper.readTree(response);
 			Datas data = new Datas();
@@ -594,6 +594,7 @@ public class mis_serviceImpl implements mis_service {
 			vendor.setCallbackLimit(cpid.getCallbackLimit());
 			vendor.setCallback_url(cpid.getCallback_url());
 			vendor.setVendorName(cpid.getVendorName());
+			vendor.setDailyCapping(cpid.getDailyCapping());
 			vendorepos.save(vendor);
 			code.setCode(200);
 			code.setStatusCode("Successfully Update");
@@ -614,6 +615,7 @@ public class mis_serviceImpl implements mis_service {
 			vendor.setCounter(cpid.getCounter());
 			vendor.setCut(cpid.getCut());
 			vendor.setCallbackLimit(cpid.getCallbackLimit());
+			vendor.setDailyCapping(cpid.getDailyCapping());
 			vendorepos.save(vendor);
 			code.setCode(200);
 			code.setStatusCode("Successfully Update");
@@ -631,11 +633,12 @@ public class mis_serviceImpl implements mis_service {
 		VendorResponse response = new VendorResponse();
 		VendorModel veModel = vendorepos.findOrderByCpid();
 		int cpid = Integer.valueOf(veModel.getCpId());
-		vendModel.setCpId(String.valueOf((cpid+1)));
+		vendModel.setCpId(String.valueOf((cpid + 1)));
 		vendorepos.save(vendModel);
 		response.setCode(200);
 		response.setStatusCode("Added Successfully");
-		response.setLpUrl("http://acb.friendzchat.mobi/friendzchat?cpid=" + vendModel.getCpId() + "&pubid=<pubid>&kpid=<kpid>");
+		response.setLpUrl(
+				"http://acb.friendzchat.mobi/friendzchat?cpid=" + vendModel.getCpId() + "&pubid=<pubid>&kpid=<kpid>");
 		return response;
 	}
 
@@ -644,19 +647,57 @@ public class mis_serviceImpl implements mis_service {
 		// TODO Auto-generated method stub
 		MisResponse misResponse = new MisResponse();
 		@SuppressWarnings("unchecked")
-		List<Columns> arrayList = restTemplate
-				.getForObject("http://all-services/service/get/column?service=updatevendor", List.class);
-		String response = restTemplate.getForObject("http://all-services/service/get/column?service=updatevendor",
+		List<Columns> arrayList = restTemplate.getForObject("http://all-services/service/get/column?service=vendor",
+				List.class);
+		String response = restTemplate.getForObject("http://all-services/service/get/column?service=vendor",
 				String.class);
-		VendorModel vendor = vendorepos.findByVendorName(name);
-		List<Datas> data = findByCpid(response, vendor);
+		List<VendorModel> vendor = vendorepos.findByVendorName(name);
+		List<Datas> data = getResponseforVendor(vendor, response);
 
 		misResponse.setColumns(arrayList);
 		misResponse.setDatas(data);
 
 		return misResponse;
-		
-		
+
+	}
+
+	@Override
+	public MisResponse findByCpidOrName(String cpid) {
+		// TODO Auto-generated method stub
+		MisResponse misResponse = new MisResponse();
+		@SuppressWarnings("unchecked")
+		List<Columns> arrayList = restTemplate.getForObject("http://all-services/service/get/column?service=vendor",
+				List.class);
+		String response = restTemplate.getForObject("http://all-services/service/get/column?service=vendor",
+				String.class);
+		List<VendorModel> vendor = vendorepos.findByVendorNameOrCpIdContaining(cpid, cpid);
+		List<Datas> data = getResponseforVendor(vendor, response);
+		misResponse.setColumns(arrayList);
+		misResponse.setDatas(data);
+		return misResponse;
+	}
+
+	@Override
+	public VendorModel getVendor(String name) {
+		// TODO Auto-generated method stub
+		List<VendorModel> vendModel = vendorepos.findByVendorName(name);
+		return vendModel.get(0);
+	}
+
+	@Override
+	public VendorResponse deleteVendor(String cpid) {
+		// TODO Auto-generated method stub
+		VendorResponse response = new VendorResponse();
+		VendorModel vendModel = vendorepos.findByCpId(cpid);
+		if (vendModel != null) {
+			vendorepos.delete(vendModel);
+			response.setCode(200);
+			response.setStatusCode("Deleted Successfully");
+		} else {
+			response.setCode(500);
+			response.setStatusCode("Vendor Not Exists");
+		}
+		return response;
 	}
 
 }

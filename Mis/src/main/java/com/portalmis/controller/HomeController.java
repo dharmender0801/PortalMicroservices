@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -80,10 +81,10 @@ public class HomeController {
 	@GetMapping("/find/vendor")
 	public ResponseEntity<MisResponse> find(@RequestParam String cpid) {
 		MisResponse misResponse = new MisResponse();
-		misResponse = misservice.findByCpid(cpid);
+		misResponse = misservice.findByCpidOrName(cpid);
 		return new ResponseEntity<MisResponse>(misResponse, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/find/vendorname")
 	public ResponseEntity<MisResponse> findByName(@RequestParam String name) {
 		MisResponse misResponse = new MisResponse();
@@ -107,11 +108,23 @@ public class HomeController {
 
 	@PostMapping("/add/vendor")
 	public ResponseEntity<VendorResponse> addVendor(@RequestBody VendorModel vendModel) {
-
 		VendorResponse response = misservice.AddVendor(vendModel);
 		return new ResponseEntity<VendorResponse>(response, HttpStatus.OK);
-		
-
 	}
+
+	@GetMapping("/get/vendor")
+	public VendorModel getVendor(@RequestParam String name) {
+		return misservice.getVendor(name);
+	}
+	
+	
+	@DeleteMapping("/delete/vendor")
+	public ResponseEntity<VendorResponse> deleteVendor(@RequestParam String cpid)
+	{
+		VendorResponse response = misservice.deleteVendor(cpid);
+		return new ResponseEntity<VendorResponse>(response, HttpStatus.OK);
+		
+	}
+	
 
 }

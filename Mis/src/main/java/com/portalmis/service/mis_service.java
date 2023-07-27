@@ -33,6 +33,12 @@ public interface mis_service {
 
 	MisResponse findByName(String name);
 
+	MisResponse findByCpidOrName(String cpid);
+
+	VendorModel getVendor(String name);
+
+	VendorResponse deleteVendor(String cpid);
+
 	
 
 }
